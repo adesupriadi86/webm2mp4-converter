@@ -2,16 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shortnews Auto Converter</title>
-    
-    <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.js"></script>
-    <script src="https://unpkg.com/@ffmpeg/util@0.12.1/dist/umd/index.js"></script>
-    
+    <title>WEBM to MP4 Converter</title>
+
+    <!--
+      ⚠️ PENTING:
+      Jangan gunakan type="module" karena FFmpeg bukan ESM di versi ini.
+      Kita muat via <script> biasa agar window.FFmpeg tersedia global.
+    -->
+
+    <!-- FFmpeg 0.10.1 Loader (WebAssembly JS API) -->
+    <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.10.1/dist/ffmpeg.min.js"></script>
+
+    <!-- FFmpeg WebAssembly Core -->
+    <script src="https://unpkg.com/@ffmpeg/core@0.10.1/dist/ffmpeg-core.js"></script>
+
+    <!-- Vite will inject CSS/JS automatically -->
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Script entry React/Vite -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
